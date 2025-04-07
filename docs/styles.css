@@ -2,7 +2,9 @@
 	--clr-txt: black;
 	--clr-bg: white;
 }
-
+* {
+	line-height: 1.5;
+}
 html, body {
 	color: var(--clr-txt);
 	background: var(--clr-bg);
@@ -27,6 +29,12 @@ h1, #hero p, h2, h3, #author, footer {
 	width: fit-content;
 	margin-inline: auto;
 }
+#hero h1 {
+	margin: 1rem auto 0;
+}
+#hero p {
+	margin: 0 auto 1rem;
+}
 svg {
 	background: #dcdcdc;
 	width: 1rem;
@@ -39,10 +47,9 @@ nav > * {
 
 @supports (display: grid) {
 	#top-logo { display: grid; }
-	@media (width > 22rem) and (height > 25em) {
+	@media (width > 27rem) and (height > 20rem) {
 		nav, #hero, .split-columns { display: grid; }
 		nav {
-			background: yellow;
 			grid-template-columns: 5.5rem 3rem 1fr;
 			align-items: center;
 		}
@@ -50,7 +57,7 @@ nav > * {
 			margin-inline: auto 1rem;
 		}
 		#hero {
-			height: min(16ch, 20vmin);
+			height: min(18ch, 25vmin);
 			place-items: center;
 		}
 		#hero > * {
