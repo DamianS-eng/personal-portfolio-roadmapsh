@@ -26,15 +26,37 @@ h1, #hero p, h2, h3, #author, footer {
 #top-logo {
 	width: fit-content;
 	margin-inline: auto;
-	display: grid;
 }
 svg {
+	background: #dcdcdc;
 	width: 1rem;
 	aspect-ratio: 1;
 	place-self: center;
 }
 nav > * {
 	margin-inline: auto;
+}
+
+@supports (display: grid) {
+	#top-logo { display: grid; }
+	@media (width > 22rem) and (height > 25em) {
+		nav, #hero { display: grid; }
+		nav {
+			background: yellow;
+			grid-template-columns: 5.5rem 3rem 1fr;
+			align-items: center;
+		}
+		#pages {
+			margin-inline: auto 1rem;
+		}
+		#hero {
+			height: min(16ch, 20vmin);
+			place-items: center;
+		}
+		#hero > * {
+			margin: .5rem 0;
+		}
+	}
 }
 
 @media(prefers-color-scheme: dark) {
