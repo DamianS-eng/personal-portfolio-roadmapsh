@@ -40,7 +40,7 @@ nav > * {
 @supports (display: grid) {
 	#top-logo { display: grid; }
 	@media (width > 22rem) and (height > 25em) {
-		nav, #hero { display: grid; }
+		nav, #hero, .split-columns { display: grid; }
 		nav {
 			background: yellow;
 			grid-template-columns: 5.5rem 3rem 1fr;
@@ -55,6 +55,17 @@ nav > * {
 		}
 		#hero > * {
 			margin: .5rem 0;
+		}
+		.split-columns {
+			grid-template-columns: repeat(3, 1fr);
+		}
+		.split-columns > * {
+			border: .5ch var(--clr-txt) solid;
+		}
+		.split:nth-child(1),
+		.split:nth-child(3) {
+			border-left-color: transparent;
+			border-right-color: transparent;
 		}
 	}
 }
