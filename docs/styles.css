@@ -1,0 +1,17 @@
+:root {
+	--clr-txt: black;
+	--clr-bg: white;
+}
+
+html, body {
+	color: var(--clr-txt);
+	background: var(--clr-bg);
+	color-scheme: light dark;
+}
+
+@media(prefers-color-scheme: dark) {
+:root {
+--clr-txt: white;
+--clr-bg: black;
+  }
+}
