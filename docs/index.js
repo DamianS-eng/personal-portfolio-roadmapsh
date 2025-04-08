@@ -6,8 +6,21 @@ const navList = [
 ];
 
 const projectList = [
-  
+	"HTML Only Portfolio",
+	"Calculator",
+	"Quiz App",
+	"Countdown Timer",
+	"Product Upcoming Page"
 ];
+
+function addToEleFromList(ele, lst, litype) {
+	if (!ele) { return; }
+	lst.forEach((i) => {
+		const liEle = = document.createElement(litype);
+		liEle.innerHTML = i;
+		ele.appendChild(liEle);
+	});
+}
 
 const menuEle = document.querySelector("#pages");
 if (menuEle) {
@@ -21,3 +34,6 @@ if (menuEle) {
 		menuEle.appendChild(linkEle);
 	});
 };
+
+const projectEle = document.querySelector("#project-list");
+addToEleFromList(projectEle, projectList, "li");
