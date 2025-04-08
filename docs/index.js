@@ -16,7 +16,7 @@ const projectList = [
 function addToEleFromList(ele, lst, litype) {
 	if (!ele) { return; }
 	lst.forEach((i) => {
-		const liEle = = document.createElement(litype);
+		const liEle = document.createElement(litype);
 		liEle.innerHTML = i;
 		ele.appendChild(liEle);
 	});
