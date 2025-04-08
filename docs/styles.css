@@ -1,6 +1,7 @@
 :root {
 	--clr-txt: black;
 	--clr-bg: white;
+	--clr-bg-li: rgb(from var(--clr-bg) calc(r - 15) calc(g - 15) calc(b - 15));
 }
 * {
 	line-height: 1.5;
@@ -21,7 +22,14 @@ menu {
 	justify-content: space-evenly;
 	align-items: center;
 }
-
+ul li {
+	text-align: center;
+	background: var(--clr-bg-li);
+	border-bottom: .25ch var(--clr-txt) solid;
+}
+ul li:nth-child(1) {
+	border-top: .5ch var(--clr-txt) solid;
+}
 h1, #hero p, h2, h3, #author, footer {
 	text-align: center;
 }
@@ -58,7 +66,21 @@ nav > * {
 		}
 		#hero {
 			height: min(18ch, 25vmin);
-			place-items: center;
+		}
+		#hero {
+			place-items: center;			
+		}
+		h2 {
+			text-align: start;
+		}
+		ul li {
+			width: min(20ch, 80%);
+			text-align: start;
+			margin-inline: auto;
+			background: initial;
+		}
+		ul li:nth-child(1) {
+			border-top-width: 0;
 		}
 		#hero > * {
 			margin: .5rem 0;
@@ -68,6 +90,7 @@ nav > * {
 		}
 		.split-columns > * {
 			border: .5ch var(--clr-txt) solid;
+			padding: 1ch 2rem;
 		}
 		.split:nth-child(1),
 		.split:nth-child(3) {
